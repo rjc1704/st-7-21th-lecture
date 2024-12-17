@@ -13,7 +13,7 @@ export default function PokemonList() {
     error,
   } = useQuery<Pokemon[], Error, Pokemon[], [string]>({
     queryKey: ["pokemons"],
-    queryFn: getPokemons,
+    queryFn: () => getPokemons(),
   });
   console.log("isPending:", isPending);
 
